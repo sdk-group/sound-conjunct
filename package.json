@@ -1,0 +1,27 @@
+{
+  "name": "sound-conjunct",
+  "version": "0.0.1",
+  "description": "Util to join sound files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuuKohaku/sound-conjunct.git"
+  },
+  "keywords": [
+    "sound",
+    "sox"
+  ],
+  "author": "V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuuKohaku/sound-conjunct/issues"
+  },
+  "homepage": "https://github.com/YuuKohaku/sound-conjunct",
+  "dependencies": {
+    "bluebird": "^2.9.30",
+    "sox.js": "^1.0.3"
+  }
+}
