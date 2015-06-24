@@ -1,15 +1,21 @@
 'use strict'
 
-var sox = require('sox.js');
+var Promise = require("bluebird");
+var sox = Promise.promisify(require('sox.js'));
 
-module.exports = function (fnames, outfile) {
+module.exports = function (fnames, outfile, params) {
+    var files = fnames || [];
+    var assign = params || {};
     var opts = {
-        rate: 8000,
-        channels: 1
+        bits: assign.bits || 8,
+        rate: assign.rate || 16000,
+        channels: assign.channels || 1
     };
-    sox([fnames, opts, outfile], ['rate', '-ql'],
-        function done(err, out) {
-            console.log(err) // => null
-            console.log(out) // => song.flac
+    return sox([files, opts, outfile], ['rate', '-ql'])
+        .then(function (out) {
+            return out;
+        })
+        .catch(function (err) {
+            return err.isOperational ? outfile : err;
         });
 }
