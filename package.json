@@ -22,6 +22,7 @@
   "homepage": "https://github.com/YuuKohaku/sound-conjunct",
   "dependencies": {
     "bluebird": "^2.9.30",
+    "fluent-ffmpeg": "^2.0.1",
     "sox.js": "^1.0.3"
   }
 }
