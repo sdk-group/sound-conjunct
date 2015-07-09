@@ -8,7 +8,7 @@ var fnames = ["explosion-01.wav",
               "Media-Convert_test4_Ulaw_Mono_VBR_8SS_22050Hz.wav"];
 
 for (var e in fnames) {
-    fnames[e] = path.resolve(__dirname, "sounds", fnames[1]);
+    fnames[e] = path.resolve(__dirname, "sounds", fnames[0]);
 }
 
 //    var opts = {
@@ -19,7 +19,8 @@ for (var e in fnames) {
 
 var opts = {
     bits: 16,
-    rate: 24000
+    rate: 24000,
+    voice_pause: 10000
 };
 
 concat(fnames, path.resolve(__dirname, "out.wav"), opts)
@@ -27,5 +28,5 @@ concat(fnames, path.resolve(__dirname, "out.wav"), opts)
         console.log("RES:", res)
     })
     .catch(function (res) {
-        console.log("ERR:", res)
+        console.log("ERR:", res.stack)
     });
