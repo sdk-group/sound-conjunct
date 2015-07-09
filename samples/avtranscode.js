@@ -1,5 +1,5 @@
 var path = require("path")
-var transcode = require("../index").ffmpeg_transcode;
+var transcode = require("../index").libav_transcode;
 
 var fnames = ["explosion-01.wav",
               "Media-Convert_test1_Alaw_Mono_VBR_8SS_16000Hz.wav",
@@ -10,7 +10,9 @@ var fnames = ["explosion-01.wav",
 fname = path.resolve(__dirname, "sounds", fnames[2]);
 
 var formats = ["oga", "m4a", "mp3", "ogg", "aac"];
-transcode(fname, path.resolve(__dirname, "out"), formats)
+transcode(fname, path.resolve(__dirname, "out"), formats, {
+        channels: 2
+    })
     .then(function (res) {
         console.log("RES:", res)
     })
