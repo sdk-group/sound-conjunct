@@ -21,7 +21,7 @@ module.exports = function (fname, outfile, exts, opts) {
             if (params.channels) avopts.push("-ac", params.channels);
             if (params.bitrate) avopts.push("-b", params.bitrate);
             avopts.push("-y", ofname);
-            console.log(avopts)
+            var cmd = avconv(avopts);
             cmd.once('exit', function (code, signal, data) {
                 resolve(!code);
             });
