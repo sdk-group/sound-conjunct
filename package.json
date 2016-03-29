@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/YuuKohaku/sound-conjunct",
   "dependencies": {
-    "avconv": "^3.0.1",
-    "bluebird": "^3.2.1",
+    "avconv": "^3.0.2",
+    "bluebird": "^3.3.4",
     "fluent-ffmpeg": "^2.0.1",
     "sox-audio": "^0.3.0",
-    "sox.js": "^1.0.3"
+    "sox.js": "^1.0.4"
   }
 }
