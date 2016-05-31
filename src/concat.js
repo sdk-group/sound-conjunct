@@ -40,7 +40,7 @@ module.exports = function (fnames, outfile, params) {
 			})
 			.on('end', function () {
 				console.log('Sox command succeeded!');
-				return resolve(outfile);
+				return resolve(true);
 			});
 		cmd.on('start', function (commandLine) {
 			// console.log('Spawned sox with command ' + commandLine);
