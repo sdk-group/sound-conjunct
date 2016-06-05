@@ -33,13 +33,13 @@ module.exports = function (fnames, outfile, params) {
 			.concat();
 		cmd
 			.on('error', function (err, stdout, stderr) {
-				console.log('Cannot process audio: ' + err.message);
+				// console.log('Cannot process audio: ' + err.message);
 				// console.log('Sox Command Stdout: ', stdout);
 				// console.log('Sox Command Stderr: ', stderr);
-				return resolve(false);
+				return reject(err);
 			})
 			.on('end', function () {
-				console.log('Sox command succeeded!');
+				// console.log('Sox command succeeded!');
 				return resolve(true);
 			});
 		cmd.on('start', function (commandLine) {
